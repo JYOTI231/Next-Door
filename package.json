@@ -1,0 +1,35 @@
+{
+  "name": "airbnbwithdatabase",
+  "version": "3.0.0",
+  "description": "it is the first database pratice project",
+  "keywords": [
+    "Ctrl+a"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "non"
+  },
+  "license": "ISC",
+  "author": "ilan sahoo",
+  "type": "express",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm start",
+    "build:css":"npx @tailwindcss/cli -i public/css/input.css -o public/css/output.css --watch",
+    "start": "nodemon app.js  "
+    
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mysql2": "^3.16.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.18"
+  }
+}

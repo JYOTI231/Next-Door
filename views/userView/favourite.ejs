@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>favourite page</title>
+</head>
+<body>
+  <%- include('../headerView/header') %>
+
+  <h1>Hear is your Favourite Home</h1>
+  <div>
+    <% home.forEach(favourite=>{ %>
+      <h3>
+     <div><%= favourite.homephoto %></div>
+     <div> <%= favourite.homename %></div>
+     <div> <%= favourite.adders %></div>
+     <div><%=favourite.price %></div>
+     <div><%= favourite.email %></div>
+      </h3>
+     <div>
+      <button type="submit"><a href="/remove/<%= favourite.id %>">Remove</a></button>
+      <button type="submit"><a href="/booking/<%= favourite.id %>">Booking</a></button>
+     </div>  
+    <% }) %> 
+  </div>
+</body>
+</html>

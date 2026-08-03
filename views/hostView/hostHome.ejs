@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Host Homes</title>
+  <!-- <link rel="stylesheet" href="/css/output.css"> -->
+</head>
+<body>
+  <%- include('../headerView/header')%>
+
+  <h1>Host, Your Register Home </h1>
+
+ <!-- <div class="container mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 max-w-6xl">  -->
+  <div>
+  <% home.forEach(Home=>{ %>
+    <div > <img src="<%=Home.homephoto%>" alt="add picture" width="200" ></div>
+    <div>  Your Home Name : <%= Home.homename %></div>
+    <div>  Your Home Adders : <%= Home.adders %></div>
+    <div>  Your Home Peice : <%= Home.price%> </div>
+    <div>  Your Contact Detils(Email) : <%= Home.email %> </div>
+    <div>  About Home detils : <%= Home.description%> </div>
+    <div>
+      <button type="submit"><a href="/edit/<%= Home.id %>?editing=true">Edit</a></button>
+      <button type="submit"><a href="/delet/<%= Home.id %>">Delet</a></button>
+    </div>
+    <br><br>
+    <% }) %>
+   </div>
+</body>
+</html>

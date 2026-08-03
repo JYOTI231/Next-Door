@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>airbnb home page</title>
+</head>
+<body>
+  <!-- <header><a href="/addHome" >ADD Home</a></header> -->
+   <%-include('../headerView/header')%>
+  <main><h2>Welcome to AirBnb Home</h2>
+   <div >
+    <% home.forEach(Home=>{ %>
+
+     <div><img src="<%=Home.homephoto %>" alt="no picture" width="200"></div>
+     <div>House Name : <%=Home.homename %></div>
+     <div>Adders : <%=Home.adders %></div>
+     <div>Price <%=Home.price %> /PerNight</div>
+     <div>Contact : <%=Home.email %></div>
+
+     <div>
+      <button type="submit"> <a href="/detil/<%=Home.id%>" >Detils</a></button>
+      <button type="submit"><a href="/booking/<%= Home.id %>">Booking</a></button>
+      <form action="/favourite" method="post">
+       <button type="submit">Favourite</button>
+       <input type="hidden" name="id" value="<%=Home.id%>"/>
+      </form> 
+    </div>
+    <br>
+    <% }) %>
+    
+   </div>
+  </main>
+
+</body>
+</html>

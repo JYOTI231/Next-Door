@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home detils page</title>
+</head>
+<body>
+  <%- include('../headerView/header')%>
+  <h1><div> Detils of  <%= home.homename %> !</div></h1>
+    
+   <div> <img src="<%= home.homephoto %>" alt="no home photo" width="200"></div>
+  <h3>
+    <div>  <%= home.description %></div><br>
+   <div> One night rent - <%= home.price %> R.S</div><br>
+   <div>This House Adders - <%= home.adders %></div><br>
+   <div>For more detils message - <%= home.email %></div><br>
+  </h3>
+  <button><a href='/booking'>Booked </a> </button>
+</body>
+</html>

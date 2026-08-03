@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login page</title>
+</head>
+<body>
+  <%- include('./header')%>
+  <h1>Login With Your Airbnb Account</h1>
+
+  <div>
+   <form action="/login-detils" method="POST">
+    <div>
+      <p>Enter your user id :</p>
+      <input type="text" name="input" placeholder="User Id" />
+    </div>
+    <div>
+      <p>Enter your password </p>
+      <input type="password" name="password" placeholder="Password" />
+    </div>
+    <input type="submit" placeholder="Login"/>
+   </form>
+  </div> 
+  
+</body>
+</html>

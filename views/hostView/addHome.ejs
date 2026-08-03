@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>host add home page</title>
+</head>
+<body>
+  <%- include('../headerView/header')%>
+  <header><h2>Add your Home Detils</h2></header>
+  <div>
+    <form action="<%= editing ? '/edit':'/addHome' %>" method="post">
+     <div>
+      
+      <input type="hidden"
+       name="id" 
+       value="<%= editing ? home.id :'' %>"
+       placeholder="id"
+      />
+       <p>Enter your House Photo</p>
+      <input type="text"
+       name="homephoto"
+       value="<%= editing ? home.homephoto :'' %>"
+       placeholder="house Photo(24mb to 25mb)" 
+      />
+      <p>Enter your House Name</p>
+      <input type="text" 
+       value="<%= editing ? home.homename :'' %>"
+       name="homename"
+       placeholder="house Name" 
+      />
+       <p>Enter your House Adders</p>
+      <input type="text"
+       value="<%= editing ? home.adders :'' %>"
+       name="adders"
+       placeholder="house Adders"
+      /> 
+      <p>Enter your House Rent</p>
+      <input type="text" 
+       name="price" 
+       value="<%= editing ? home.price :'' %>"
+       placeholder="price per night" 
+      />
+       <p>Enter your Email </p>
+      <input type="email" 
+       name="email"
+       value="<%= editing ? home.email :'' %>" 
+       placeholder="Email"
+      /> 
+      <p>Detils about your Home</p>
+      <textarea
+       name="description"
+       placeholder="Detils"
+      ><%= editing? home.description: '' %></textarea>
+      <br><br>
+      <input type="submit" value="<%= editing ? 'Update' :'AddHome' %>" />
+     
+     </div>
+    </form>
+  </div>
+</body>
+</html>
