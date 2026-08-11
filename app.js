@@ -14,7 +14,7 @@ const hostHomeRouter =require('./routers/hostRouter/hostHome');
 const addHomeRouter= require('./routers/hostRouter/addHome');
 const deletEditRouter = require('./routers/hostRouter/delet&edit');
 
-
+const {mongoConnection} = require('./util/databaseUtil');
 
 const app = express();
 
@@ -45,6 +45,7 @@ app.set('views','views');
 
 
 const port=3001;
+mongoConnection((clint)=>{})
 app.listen(port,()=>{
   
   console.log(`server is running at http://localhost:${port}`);
