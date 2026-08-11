@@ -144,3 +144,4 @@ vite.config.ts.timestamp-*
 
 # my file
 util/databaseUtil.js
+data/*
