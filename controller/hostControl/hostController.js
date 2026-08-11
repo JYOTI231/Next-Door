@@ -14,7 +14,7 @@ exports.postHomecontrol=(req,res,next)=>{
   const home = new Home(homephoto,homename,adders,price,email,description);
 
   home.save().then(()=>{
-    res.redirect('/addhome');
+    console.log('home added successfully');
   }).catch((error)=>{
     console.log('error adding home',error);
   });

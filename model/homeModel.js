@@ -5,6 +5,8 @@ const path = require('path');
 const dataPath = path.join(__dirname,'../data/registerHome.json');
 const fvHome = require('./favouritemodel');
 
+const getdb = require('../util/databaseUtil').getdb;
+
 module.exports = class Home{
 
   constructor(homephoto,homename,adders,price,email,description,id){
@@ -19,25 +21,23 @@ module.exports = class Home{
   }
 
   static fatchData(){
-    return db.execute('SELECT * FROM homes')
+    
   }
 
   save(){
-    if(this.id){
-      return db.execute('UPDATE homes SET homephoto=?,homename=?,adders=?,price=?,email=?,description=? WHERE id=?',[this.homephoto,this.homename,this.adders,this.price,this.email,
-      this.description,this.id]);
-    }else{
-     return db.execute('INSERT INTO homes(homephoto,homename,adders,price,email,description)VALUES(?,?,?,?,?,?)',[this.homephoto,this.homename,this.adders,this.price,this.email,this.    description]);
-    }
+    const db = getdb();
+    return db.collection('home').insertOne(this).then((result)=>{
+      console.log('data inserted successfully');
+    })
   }
 
   static findById(homeid){
     
-    return db.execute('SELECT * FROM homes WHERE id=?', [homeid]);
+    
   }
 
   static deletById(homeid){
-    return db.execute('DELETE FROM homes WHERE id=?',[homeid]);
+    
   }
   
 }
